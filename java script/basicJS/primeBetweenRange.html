@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prime between range</title>
+</head>
+
+<body>
+    <script>
+        let a = parseInt(prompt("Enter first number :"))
+        let b = parseInt(prompt("Enter second number :"))
+
+        let arr = new Array()
+        let size = 0
+
+        start = (a < b ? a : b)
+        end = (a > b ? a : b)
+
+        for (i = start; i < end; i++) {
+            counter = 0
+            for (j = 0; j < i; j++) {
+                if (i % j == 0) {
+                    counter++
+                }
+            }
+            if (counter == 1) {
+                arr[size++] = i
+            }
+        }
+
+        document.writeln(arr)
+    </script>
+</body>
+
+</html>

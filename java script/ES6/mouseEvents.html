@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+</head>
+<body>
+    <button>Press me</button>
+    <script>
+        document.addEventListener('mousedown',function(e){
+            if(e.button === 0){
+                alert("Left clicked")
+            }else{
+                alert("right clicked")
+            }
+        })
+    </script>
+</body>
+</html>
