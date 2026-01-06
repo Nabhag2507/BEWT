@@ -24,11 +24,11 @@ userRouter.get('/:id',async(req,res)=>{
 
 userRouter.post('/add',async(req, res)=>{
     try{
-        const { userName, phone } = req.body
+        const { username, phone } = req.body
         const userToAdd = await user.create({
-            userName,phone
+            username,phone
         })
-        res.send("user added successfully", userToAdd)
+        res.json({message :"user added successfully", userToAdd})
     }
     catch(err){
         console.log(err);
