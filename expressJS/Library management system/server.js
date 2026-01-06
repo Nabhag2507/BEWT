@@ -5,6 +5,7 @@ dotenv.config()
 
 const bookRouter = require('./routes/books.route')
 const userRouter = require('./routes/user.route')
+const transactionRouter = require('./routes/transaction.route')
 
 const app = express()
 app.use(express.json())
@@ -17,6 +18,7 @@ mongoose.connect(process.env.mongourl).then(()=>{
 
 app.use('/books',bookRouter)
 app.use('/users', userRouter)
+app.use('/transactions', transactionRouter)
 
 app.listen(process.env.PORT,(req, res)=>{
     console.log("Server is running on port ", process.env.PORT);
