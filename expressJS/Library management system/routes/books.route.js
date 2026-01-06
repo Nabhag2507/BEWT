@@ -24,11 +24,11 @@ bookRouter.get('/:id',async(req,res)=>{
 
 bookRouter.post('/add',async(req, res)=>{
     try{
-        const { bookName, bookId } = req.body
+        const { title,totalQuantity,availableQuantity } = req.body
         const bookToAdd = await book.create({
-            bookName,bookId
+            title,totalQuantity,availableQuantity
         })
-        res.send("Book added successfully", bookToAdd)
+        res.json({message :"Book added successfully", bookToAdd})
     }
     catch(err){
         console.log(err);
