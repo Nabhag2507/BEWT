@@ -63,4 +63,37 @@ bookRouter.delete("/delete/:id", async(req,res)=>{
     }
 })
 
+bookRouter.get("/search", async (req, res) => {
+    try {
+        let { search, page = 1, limit = 5 } = req.query;
+        console.log(search);
+        
+        const skip = (page - 1) * limit;
+
+        let filter = {};
+        if (search) {
+            filter = {
+                $or: [
+                    { username: { $regex: search, $options: "i" } },
+                    { email: { $regex: search, $options: "i" } }
+                ]
+            }
+        }
+
+        const users = await book.find(filter).skip(skip).limit(limit).sort({ createdAt: -1 });
+        const total = await book.countDocuments(filter);
+
+        res.status(200).json({
+            message: "Users fetched",
+            total,
+            page,
+            limit,
+            users
+        });
+    }
+    catch (err) {
+        res.status(500).json({ message: "Internal Server Error" });
+    }
+});
+
 module.exports = bookRouter
