@@ -57,7 +57,6 @@ transactionRouter.post("/return", async (req, res) => {
     transaction.returnDate = new Date();
     await transaction.save();
 
-   
     await Book.findByIdAndUpdate(transaction.bookId, {
       $inc: { availableQuantity: transaction.quantity },
     });
