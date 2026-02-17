@@ -50,8 +50,11 @@ export default function RootLayout({
                       <li className="nav-item">
                         <Link className="nav-link" href="/client">Client</Link>
                       </li>
-                      <li className="nav-item">
+                      {/* <li className="nav-item">
                         <Link className="nav-link" href="/pageNO">pageno</Link>
+                      </li> */}
+                      <li className="nav-item">
+                        <Link className="nav-link" href="/students">Students</Link>
                       </li>
                     </ul>
                   </div>
