@@ -15,7 +15,9 @@ export default function RootLayout({
         <Link href='/'>Home page</Link> &nbsp;
         <Link href='demo-a'>A demo</Link> &nbsp;
         <Link href='demo-b'>B demo</Link> &nbsp;
-        <Link href='demo-c'>C demo</Link>
+        <Link href='demo-c'>C demo</Link> &nbsp;
+        <Link href='calculator'>Calculator</Link> &nbsp;
+        <Link href='counter'>Counter</Link> 
         {children}
       </body>
     </html>
