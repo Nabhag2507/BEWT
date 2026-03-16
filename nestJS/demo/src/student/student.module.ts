@@ -4,4 +4,4 @@ import { StudentController } from './student.controller';
 @Module({
     controllers: [StudentController]
 })
-export class StudentModule { }
+export class StudentModule {}
